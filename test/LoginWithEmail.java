@@ -11,7 +11,7 @@ public class LoginWithEmail extends BeforeAndAfter{
 
 
     @Test
-    public void positiveLoginByEmail() {
+    public void positiveLoginWithEmail() {
         getLoginPage().setUsername("vadimshubkin@gmail.com");
         getLoginPage().submitRegister();
         Assert.assertTrue(getLoginPage().signInButtonDisplayed());
@@ -19,7 +19,7 @@ public class LoginWithEmail extends BeforeAndAfter{
 
 
     @Test
-    public void negativeLoginByEmail() {
+    public void negativeLoginWithEmail() {
         getLoginPage().setUsername("vadimshubkin?gmail.com");
         getLoginPage().submitRegister();
         getWait().until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#usernameError")));
