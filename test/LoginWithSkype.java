@@ -10,7 +10,7 @@ import utility.UtilityForScreenshot;
 public class LoginWithSkype extends BeforeAndAfter{
 
     @Test
-    public void positiveLoginBySkype() {
+    public void positiveLoginWithSkype() {
         getLoginPage().setUsername("asdfgh");
         getLoginPage().submitRegister();
         Assert.assertTrue(getLoginPage().signInButtonDisplayed());
@@ -18,7 +18,7 @@ public class LoginWithSkype extends BeforeAndAfter{
 
 
     @Test
-    public void negativeLoginBySkype() {
+    public void negativeLoginWithSkype() {
         getLoginPage().setUsername("?asdfgh*");
         getLoginPage().submitRegister();
         getWait().until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#usernameError")));
