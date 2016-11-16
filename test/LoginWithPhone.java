@@ -10,7 +10,7 @@ import utility.UtilityForScreenshot;
 public class LoginWithPhone extends BeforeAndAfter{
 
     @Test
-    public void positiveLoginByPhoneNumber() {
+    public void positiveLoginWithPhoneNumber() {
         getLoginPage().setUsername("+380934663425");
         getLoginPage().submitRegister();
         Assert.assertTrue(getLoginPage().signInButtonDisplayed());
@@ -18,7 +18,7 @@ public class LoginWithPhone extends BeforeAndAfter{
 
 
     @Test
-    public void negativeLoginByPhoneNumber() {
+    public void negativeLoginWithPhoneNumber() {
         getLoginPage().setUsername("?3809ASDF4663425");
         getLoginPage().submitRegister();
         getWait().until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#usernameError")));
