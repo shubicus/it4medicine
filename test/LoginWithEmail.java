@@ -23,7 +23,7 @@ public class LoginWithEmail extends BeforeAndAfter{
         getLoginPage().setUsername("vadimshubkin?gmail.com");
         getLoginPage().submitRegister();
         getWait().until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#usernameError")));
-        UtilityForScreenshot.captureScreenshot(getWebDriver(), "SortedByName");  //screenshot
+        UtilityForScreenshot.captureScreenshot(getWebDriver(), "ErrorInvalidEmail");  //screenshot
         Assert.assertTrue(getLoginPage().usernameErrorDisplayed());
     }
 
